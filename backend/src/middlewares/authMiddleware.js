@@ -8,7 +8,7 @@ const authMiddleware = async (req,res,next) => {
         const { token } = req.cookies
 
         if (!token) {
-            res.status(400).send("Please, Login First")
+            return res.status(400).send("Please, Login First")
         }
 
         const decodeToken = await jwt.verify(token, 'finance@7011')
@@ -16,14 +16,14 @@ const authMiddleware = async (req,res,next) => {
 
         const user = await User.findOne({ _id })
         if (!user) {
-            res.status(400).send("User not found")
+           return res.status(400).send("User not found")
         }
 
         req.user = user
         next()
     }
     catch(err){
-        res.status(400).send("ERROR: "+err.message)
+        return res.status(400).send("ERROR: "+err.message)
     }
 }
 

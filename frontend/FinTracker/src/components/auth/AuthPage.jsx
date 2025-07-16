@@ -102,31 +102,31 @@ const SignupPage = () => {
         
         {
           isLogIn?
-          (<img className="h-[150px] [w-150px]" src="https://cdn-icons-png.flaticon.com/128/3064/3064573.png" alt="user image"></img>):
-          (	<img className="h-[150px] [w-150px]" src="https://cdn-icons-png.flaticon.com/128/9424/9424640.png" alt="user image"></img>)
+          (<img className="h-[100px] [w-100px]" src="https://cdn-icons-png.flaticon.com/128/924/924915.png" alt="user image"></img>):
+          (	<img className="h-[100px] [w-100px]" src="	https://cdn-icons-png.flaticon.com/128/4140/4140061.png" alt="user image"></img>)
         }
 
-        <div className='h-[50px] w-[340px] flex items-center justify-between font-serif '>
-          <label>Email Id:</label>
-          <input className="outline-none p-0 bg-transparent border-black border-b-[1px]" type="text" value={emailId} onChange={(e)=>{setEmailId(e.target.value)}} placeholder='Email Id'></input>
+        <div className='h-[50px] w-[340px] flex flex-col items-start justify-between font-serif '>
+          <label className='text-gray-600'>Email Id</label>
+          <input className="w-full outline-none p-2 bg-transparent border-gray-400 border-[1px] rounded-md" type="text" value={emailId} onChange={(e)=>{setEmailId(e.target.value)}} placeholder='Email Id'></input>
         </div>
 
-        <div className='h-[50px] w-[340px] flex items-center justify-between font-serif'>
-          <label>Password:</label>
-          <input className="outline-none p-0 bg-transparent border-black border-b-[1px]" type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder='password'></input>
+        <div className='h-[50px] w-[340px] flex flex-col items-start justify-between font-serif'>
+          <label className='text-gray-600'>Password</label>
+          <input className="w-full outline-none p-2 bg-transparent border-gray-400 border-[1px] rounded-md" type="password" value={password} onChange={(e)=>{setPassword(e.target.value)}} placeholder='password'></input>
         </div>
 
         {
-          isLogIn?(<div className='h-[50px] w-[340px] flex items-center justify-between font-serif'>
+          isLogIn?(<div className='h-[50px] w-[340px] flex flex-col items-start justify-between font-serif'>
             <label>Confirm Password:</label>
-            <input className="outline-none p-0 bg-transparent border-black border-b-[1px]"type="password" onChange={(e)=>{setConfirmPassword(e.target.value)}} placeholder='Confirm password'></input>
+            <input className="w-full outline-none p-2 bg-transparent border-gray-400 border-[1px] rounded-md"type="password" onChange={(e)=>{setConfirmPassword(e.target.value)}} placeholder='Confirm password'></input>
           </div>):""
         }
         
         {
           isLogIn?
-          <button className="w-[85%] px-4 py-2 bg-black rounded-md text-white duration-700 hover:bg-gray-600 hover:duration-700" type="submit" onClick={handleSignUp}>Sign Up</button>:
-          <button className="w-[85%] px-4 py-2 bg-black rounded-md text-white hover:bg-gray-600 duration-700 hover:duration-700" type="submit" onClick={handleLogIn}>Log In</button>
+          <button className="w-[85%] mt-2 px-4 py-2 bg-black rounded-md text-white duration-700 hover:bg-gray-600 hover:duration-700" type="submit" onClick={handleSignUp}>Sign Up</button>:
+          <button className="w-[85%] mt-2 px-4 py-2 bg-black rounded-md text-white hover:bg-gray-600 duration-700 hover:duration-700" type="submit" onClick={handleLogIn}>Log In</button>
         }
 
       </div>

@@ -18,9 +18,9 @@ transactionsOperations.get("/api/transaction/all/",authMiddleware,async(req,res)
 transactionsOperations.post("/api/transaction/add/",authMiddleware, async(req,res)=>{
     try{
 
-        const {title,amount,type,category} = req.body
+        const {description,amount,type,category} = req.body
         const trans = new Transactions({
-            title,
+            description,
             amount,
             type,
             category,
@@ -37,10 +37,10 @@ transactionsOperations.post("/api/transaction/add/",authMiddleware, async(req,re
 transactionsOperations.patch("/api/transaction/:id",authMiddleware,async(req,res)=>{
     try{
 
-        const {title,amount,type,category} = req.body
+        const {description,amount,type,category} = req.body
         const id = req.params.id
-        const trans = await Transactions.updateOne({_id:id},{$set:{title,amount,type,category}})
-        res.send("transaction updated")
+        const trans = await Transactions.updateOne({_id:id},{$set:{description,amount,type,category}})
+        res.send({"message":"transaction updated"})
     }
     catch(err){
         res.status(400).send("Error: "+err.message)
@@ -51,7 +51,7 @@ transactionsOperations.delete("/api/transaction/:id",authMiddleware,async(req,re
     try{
         const id = req.params.id
         await Transactions.deleteOne({_id:id})
-        res.send("Removed!")
+        res.send({"message":"Removed"})
     }
     catch(err){
         res.status(400).send("Error: "+err.message)

@@ -5,7 +5,10 @@ const userSlice = createSlice({
   initialState: null,
   reducers: {
     addUser: (state, action) => {return action.payload},
-    removeUser: (state) => {return null}
+    removeUser: (state) => {
+      localStorage.removeItem("persist:root");
+      return null
+    }
   }
 });
 

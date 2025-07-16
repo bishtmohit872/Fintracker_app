@@ -2,14 +2,12 @@ const mongoose = require('mongoose')
 
 const transactionsSchema = mongoose.Schema(
     {
-        title: {
+        description: {
             type: String,
             require: [true, "Title can't be empty"],
         },
-        amount: {
-            type: Number,
-            require:[true,"Amount can't be Empty"],
-            default: 0,
+        category: {
+            type: String,
         },
         type: {
             type: String,
@@ -19,8 +17,10 @@ const transactionsSchema = mongoose.Schema(
                 message:"invalid type",
             }
         },
-        category: {
-            type: String,
+        amount: {
+            type: Number,
+            require:[true,"Amount can't be Empty"],
+            default: 0,
         },
 
     },

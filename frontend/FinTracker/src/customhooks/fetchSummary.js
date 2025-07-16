@@ -10,7 +10,7 @@ export const fetchSummary = ()=>{
 
     useEffect(()=>{
         getSummary()
-    },[])
+    },[]) 
 
     const getSummary = async ()=>{
         const res = await axios.get(BASE_URL+"/api/transaction/summary",{withCredentials:true}) 
