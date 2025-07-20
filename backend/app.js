@@ -1,4 +1,4 @@
-const connectDB = require("./config/dbConfig")
+const connectDB = require("./src/config/dbConfig")
 const express = require('express')
 const app=express()
 const cookieParser = require('cookie-parser')
@@ -14,8 +14,8 @@ app.use(express.json())
 app.use(cookieParser())
 
 
-const authRouter = require("./routes/userAuth")
-const transactionRouter = require("./routes/transactionsOperations")
+const authRouter = require("./src/routes/userAuth")
+const transactionRouter = require("./src/routes/transactionsOperations")
 
 app.use("/",authRouter)
 app.use("/",transactionRouter)
