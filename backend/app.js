@@ -7,8 +7,7 @@ const cors = require('cors')
 require('dotenv').config();
 
 app.use(cors({
-    origin:"http://localhost:5173",
-    // origin:"https://fintracker-app-backend.onrender.com",
+    origin:["http://localhost:5173","https://fintracker-app-backend.onrender.com"],
     credentials:true,
 }))
 app.use(express.json())
