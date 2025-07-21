@@ -4,6 +4,7 @@ import { useSelector } from "react-redux"
 import Balances from "./DashboardComponents/Balances"
 import RecentTransaction from "./DashboardComponents/RecentTransactions"
 import SpendingByCategory from "./DashboardComponents/SpendingByCategory"
+import axios from "axios"
 
 
 const Dashboard = () =>{
