@@ -1,4 +1,4 @@
-import { createBrowserRouter,Outlet,RouterProvider } from 'react-router-dom'
+import { createBrowserRouter,Outlet,RouterProvider,createHashRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
 import {PersistGate} from 'redux-persist/integration/react'
@@ -14,7 +14,8 @@ import Budget from './components/budget/Budget'
 
 const App = ()=> {
 
-  const appRouter = createBrowserRouter([{
+  // const appRouter = createBrowserRouter([{
+  const appRouter = createHashRouter([{
     path:"/",
     element:<Body/>,
     children:[
