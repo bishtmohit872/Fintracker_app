@@ -1,5 +1,4 @@
 import { useEffect } from "react"
-import { useImperativeHandle } from "react"
 import { BASE_URL } from "../utils/constant"
 import { useDispatch } from "react-redux"
 import { addSummary, removeSummary } from "../utils/summarySlice"

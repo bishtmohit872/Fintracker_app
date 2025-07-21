@@ -4,7 +4,7 @@ import { fetchSummary } from "../../../customhooks/fetchSummary"
 const Balances = () =>{
     const transactionSummary = useSelector(store=>store.summary)
     fetchSummary()
-
+    console.log("here is summary",transactionSummary)
     return(
         <div className="h-[20%] mt-2 w-full flex flex-col items-start justify-evenly">
             <p className="text-2xl font-bold">Account Balances</p>
